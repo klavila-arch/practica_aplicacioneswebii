@@ -3,23 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafetería Yuri</title>
+
+    <title>Cafetería Karen</title>
+
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Tipografías -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #f8f1e7;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .navbar {
+            background-color: #5d4037 !important;
+            padding: 12px 0;
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #ffffff !important;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #fff8e1 !important;
+            margin-left: 10px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #ffcc80 !important;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #5d4037;
+        }
+
+        p {
+            color: #4e342e;
+        }
+
+        .contenido {
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+    </style>
 </head>
-<body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="{% url 'menu' %}">☕ Cafetería Yuri</a>
-            <div class="navbar-nav">
-                <a class="nav-link" href="{% url 'menu' %}">Menú Digital</a>
-                <a class="nav-link" href="{% url 'cocina' %}">Cocina (Comandas)</a>
-                <a class="nav-link" href="/admin/" target="_blank">Panel Admin</a>
+            <a class="navbar-brand" href="{% url 'menu' %}">
+                ☕ Cafetería Karen
+            </a>
+
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="{% url 'menu' %}">
+                    📋 Menú Digital
+                </a>
+
+                <a class="nav-link" href="{% url 'cocina' %}">
+                    👩‍🍳 Cocina
+                </a>
+
+                <a class="nav-link" href="/admin/" target="_blank">
+                    ⚙️ Panel Admin
+                </a>
             </div>
         </div>
     </nav>
 
-    <div class="container my-4">
-        {% block content %}{% endblock %}
-    </div>
+    <main class="container contenido">
+        {% block content %}
+        {% endblock %}
+    </main>
 </body>
 </html>
